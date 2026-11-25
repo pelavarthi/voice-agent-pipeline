@@ -10,6 +10,13 @@ from voice.audio import (
 )
 from voice.fake_mic import FakeMicSource
 from voice.ring_buffer import RingBuffer
+from voice.vad import (
+    SpeechSegment,
+    VadEvent,
+    VoiceActivityDetector,
+    detect_speech,
+    frame_rms,
+)
 from voice.wav_io import read_wav, write_wav
 
 __all__ = [
@@ -21,6 +28,11 @@ __all__ = [
     "validate_sample_rate",
     "FakeMicSource",
     "RingBuffer",
+    "SpeechSegment",
+    "VadEvent",
+    "VoiceActivityDetector",
+    "detect_speech",
+    "frame_rms",
     "read_wav",
     "write_wav",
 ]

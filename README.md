@@ -19,6 +19,15 @@ Audio is mono 16-bit PCM throughout, 16 kHz by default. `sounddevice` is
 optional: it is only needed on a machine with a real microphone, and
 `list_input_devices()` returns `[]` when it is not installed.
 
+## Day 2: voice activity detection
+
+- `voice/vad.py` — energy-based VAD: a frame counts as speech when its RMS
+  energy clears a threshold; five loud frames in a row start a segment, and
+  400 ms of quiet ends it. Short blips are ignored, short pauses inside a
+  sentence do not split it, and 100 ms of pre-roll audio is kept so the
+  first syllable is not clipped. `calibrate()` measures room noise and
+  raises the threshold above it.
+
 ## Run the tests
 
 ```sh
