@@ -10,6 +10,15 @@ from voice.audio import (
 )
 from voice.fake_mic import FakeMicSource
 from voice.ring_buffer import RingBuffer
+from voice.stt import (
+    FakeTranscriber,
+    Transcription,
+    TranscriptionStream,
+    Transcriber,
+    create_transcriber,
+    transcribe_frames,
+    transcribe_segment,
+)
 from voice.vad import (
     SpeechSegment,
     VadEvent,
@@ -28,6 +37,13 @@ __all__ = [
     "validate_sample_rate",
     "FakeMicSource",
     "RingBuffer",
+    "FakeTranscriber",
+    "Transcription",
+    "TranscriptionStream",
+    "Transcriber",
+    "create_transcriber",
+    "transcribe_frames",
+    "transcribe_segment",
     "SpeechSegment",
     "VadEvent",
     "VoiceActivityDetector",

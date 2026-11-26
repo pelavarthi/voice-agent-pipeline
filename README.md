@@ -28,6 +28,18 @@ optional: it is only needed on a machine with a real microphone, and
   first syllable is not clipped. `calibrate()` measures room noise and
   raises the threshold above it.
 
+## Day 3: STT adapter interface + fake transcriber
+
+- `voice/stt.py` — a `Transcriber` interface with two modes: one-shot
+  `transcribe()` for a whole utterance, and `stream()` for chunked audio
+  that yields partial results while the speaker is still talking and a
+  final result when the utterance ends. `FakeTranscriber` reads its
+  answers from a script, revealing one word per 200 ms of audio, so the
+  pipeline is testable with no API key. `transcribe_segment()` runs a
+  VAD segment through a transcriber, `transcribe_frames()` drives a
+  stream over frames, and `create_transcriber()` builds one by name
+  (real adapters arrive on Day 10).
+
 ## Run the tests
 
 ```sh
