@@ -10,6 +10,15 @@ from voice.audio import (
 )
 from voice.fake_mic import FakeMicSource
 from voice.ring_buffer import RingBuffer
+from voice.llm import (
+    ChatMessage,
+    Conversation,
+    FakeLanguageModel,
+    LanguageModel,
+    Turn,
+    create_language_model,
+    run_conversation,
+)
 from voice.stt import (
     FakeTranscriber,
     Transcription,
@@ -37,6 +46,13 @@ __all__ = [
     "validate_sample_rate",
     "FakeMicSource",
     "RingBuffer",
+    "ChatMessage",
+    "Conversation",
+    "FakeLanguageModel",
+    "LanguageModel",
+    "Turn",
+    "create_language_model",
+    "run_conversation",
     "FakeTranscriber",
     "Transcription",
     "TranscriptionStream",

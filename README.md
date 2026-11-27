@@ -40,6 +40,16 @@ optional: it is only needed on a machine with a real microphone, and
   stream over frames, and `create_transcriber()` builds one by name
   (real adapters arrive on Day 10).
 
+## Day 4: LLM turn loop
+
+- `voice/llm.py` — a `LanguageModel` interface with one-shot `reply()` and
+  word-by-word `stream_reply()`, a `FakeLanguageModel` that answers a few
+  stock questions and echoes anything else, and a `Conversation` that
+  keeps the message history, runs one turn at a time, and trims old
+  turns past `max_turns` while always keeping the system prompt first.
+  `run_conversation()` drives a list of transcripts through a fresh
+  conversation. Real models plug in behind the same interface on Day 10.
+
 ## Run the tests
 
 ```sh
